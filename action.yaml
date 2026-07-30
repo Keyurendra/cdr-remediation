@@ -72,6 +72,7 @@ runs:
         az login --service-principal --username ${{ inputs.AZURE_CLIENT_ID }} --password ${{ inputs.AZURE_CLIENT_SECRET }} --tenant ${{ inputs.AZURE_TENANT_ID }}
 
     - name: Dump GitHub Event
+      shell: bash
       run: |
         echo '${{ toJson(github.event) }}'
 
